@@ -15,6 +15,7 @@ clearBtn.addEventListener("click", clearItems);
 //INDEXD
 //Function for adding item into the list
 function addItem(e){
+    console.log("Adding new comment");
     e.preventDefault();
     const value = input.value;
 
@@ -67,6 +68,17 @@ function addItem(e){
 }
 //Display message function
 function displayMessage(message, action){
+    display.textContent = message;
+    display.classList.add(`display-${action}`);
+
+    //Remove the message after 1 seconds
+    setTimeout(function(){
+        display.textContent="";
+        display.classList.remove(`display-${action}`);
+    }, 1000);
+}
+
+function displayMessageDuplicate(message, action){
     display.textContent = message;
     display.classList.add(`display-${action}`);
 
