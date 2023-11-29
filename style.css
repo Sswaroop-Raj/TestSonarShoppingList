@@ -1,0 +1,132 @@
+body{
+    /*background: rgb(238, 237, 237)*/
+    background: #f5fafa;
+}
+
+.my-section{
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 500px;
+    margin-top: 10%;
+    /*background: rgb(248, 247, 247);*/
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 5px 2px 5px 5px rgb(240, 240, 240) ;
+}
+.my-section:hover{
+    box-shadow: 5px 2px 5px 4px #e7e6e6;
+}
+.display-message{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;;
+    text-transform: capitalize;
+    font-size: 13px;
+    margin-bottom: 10px;
+    align-items: center;
+    letter-spacing: 1px;
+}
+.display-fail{
+    color:rgb(71, 68, 68);
+    background: rgb(253, 253, 165);
+}
+.display-success{
+    color: rgb(71, 68, 68);
+    background: rgb(161, 247, 161);
+}
+.my-form h3{
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.form-data{
+    display: flex;
+    justify-content: center;
+}
+#input-item{
+    border-top-left-radius: 5px;;
+    border-bottom-left-radius: 5px;
+    border-color: transparent;
+    font-size: 1rem;
+    background: rgb(230, 228, 228);
+    padding-left: 5px;
+    padding: 4px;
+    flex: auto; 
+}
+#input-item::placeholder{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(117, 117, 117);
+}
+#submit-btn{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: transparent;
+    background: rgb(179, 202, 236);
+    flex: 0 0 5rem;
+    display: grid;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+}
+#submit-btn:hover{
+    background: rgb(82, 142, 233);
+    color: white;
+}
+.shop-container{
+    margin-top: 20px;
+    visibility: hidden;
+}
+.show-container{
+    visibility:visible;
+}
+.shop-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    height: 1.2rem;
+}
+.shop-item:hover{
+    color: rgb(117, 117, 117);
+    background: rgb(230, 228, 228);
+
+}
+.item-title{
+    letter-spacing: 2px;
+    color: rgb(31, 30, 30);
+}
+#delete-btn{
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-right: 4px;
+    background: rgb(184, 223, 184);
+    border-radius: 3px;
+    margin: 0 0.15rem;
+}
+#delete-btn:hover{
+    color: white;
+    background: rgb(88, 163, 88);
+}
+.clear-btn{
+    display: flex;
+    align-content: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin-left: 42%;
+    letter-spacing: 1px;
+    border-color: transparent;
+    background: rgb(240, 180, 180);
+    border-radius: 4px;
+    padding: 3px 3px 3px 3px;
+    margin-top: 2rem;
+}
+.clear-btn:hover{
+    background: rgb(240, 79, 79);
+    color: white;
+}
