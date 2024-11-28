@@ -30,7 +30,7 @@ pipeline {
         }
         stage('checkout') {
           steps {
-              checkout scmGit(branches: [[name: params.branch_shopping_list]],userRemoteConfigs: [[credentialsId:  'CREDS_ID',url: 'https://github.com/Sswaroop-Raj/TestSonarShoppingList.git']])
+              checkout scmGit(branches: [[name: params.branch_shopping_list]],userRemoteConfigs: [[credentialsId:  'CREDS_ID2',url: 'https://github.com/Sswaroop-Raj/TestSonarShoppingList.git']])
           }
         }
         stage('Build UI') {
