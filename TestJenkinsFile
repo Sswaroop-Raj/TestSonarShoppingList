@@ -1,0 +1,52 @@
+pipeline {
+    agent {
+     label 'Test Shopping List'
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+        timeout(time: 30, unit: 'MINUTES')
+        skipDefaultCheckout()
+    }
+    environment {
+         PROJECT_NAME = 'TestSonarShoppingList'
+         PROJECT_URL = 'https://localhost:4200'
+    }
+    parameters {
+      choice(name: "deploy_env", choices: 'dev\nstg', description: 'choose specific environment for deployment')
+      string(name: "branch_shopping_list", defaultValue: "main", description: 'deploy specific branch, leave it blank to use current main branch')
+    }
+    stages {
+        stage('Initialize'){
+          steps{
+             script {
+                sh 'echo Project Name=$PROJECT_NAME'
+                sh 'echo Project URL =$PROJECT_URL'
+                sh 'java -version'
+                sh "echo branch = ${params.branch_shopping_list}"
+                sh 'node --version'
+             }
+          }
+        }
+        stage('checkout') {
+          steps {
+              checkout scmGit(branches: [[name: params.branch_shopping_list]],userRemoteConfigs: [[credentialsId:  'CREDS_ID',url: 'https://github.com/Sswaroop-Raj/TestSonarShoppingList.git']])
+          }
+        }
+        stage('Build UI') {
+          steps {
+              sh "cd dams-app-ui && npm install --force "
+              sh "cd dams-app-ui && npm run build --prod"
+          }
+        }
+        stage('deploy') {
+          steps {
+              script {
+                 sh 'Deploying....'
+                 sh "Deployment Succesfull!"
+              }
+          }
+        }
+    }
+
+}
